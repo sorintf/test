@@ -4,8 +4,8 @@ import { Text, View } from 'react-native';
 
 const App = () => {
   return (
-    <View>
-      <View>
+    <View style={{marginTop:50}}>
+      <View style={{backgroundColor:'red',width:'100%'}}>
         <Text>
           Hello 1
         </Text>
