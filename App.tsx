@@ -16,10 +16,17 @@ const App = () => {
     // },2000)
   },[])
 
-  onAddRandom = () => {
+  const onAddRandom = () => {
     const randomVal = Math.floor(Math.random() * 100) +1;
     const newState = [...random,randomVal];
     setRandom(newState);
+  }
+
+  const onItemRemove = (position) => {
+    const newArray = random.filter((item,i) => {
+      return position !== i;
+    });
+    setRandom(newArray);
   }
 
   return (
@@ -47,7 +54,10 @@ const App = () => {
       <View>
         <Generate add={() => onAddRandom()}></Generate>
       </View>
-      <ListItems items={random}/>
+      <ListItems 
+        items={random} 
+        remove={(pos) => onItemRemove(pos)}
+      />
     </View>
   )
 }
@@ -57,8 +67,8 @@ const styles =  StyleSheet.create({
       flex:1,
       paddingTop:50, 
       backgroundColor:'#00ff00', 
-      alignItems:'center', // center X axis
-      justifyContent:'center', // center Y axis
+      alignItems:'flex-start', // center X axis
+      justifyContent:'flex-start', // center Y axis
     },
     basicView:{
       backgroundColor:'#ff00ff', 

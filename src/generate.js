@@ -1,19 +1,22 @@
 import React from "react";
-import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { 
+    Text, 
+    View, 
+    StyleSheet, 
+    TouchableHighlight, 
+    TouchableOpacity, 
+    Pressable
+} from 'react-native';
 
 
 const Generate = ({add}) => (
-    <TouchableOpacity 
+    <Pressable 
         onPress={() => add()} 
-        underlayColor="red" 
-        activeOpacity={0.1} 
-        // onHideUnderlay={()=> alert('hide')}
-        // onShowUnderlay={()=> alert('show')}
     >
         <View style={styles.generate}>
             <Text style={{color:'#ffffff'}}>Add number</Text>
         </View>
-    </TouchableOpacity>
+    </Pressable>
 )
 
 const styles =  StyleSheet.create({

@@ -1,13 +1,25 @@
 import React from "react";
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, Pressable } from 'react-native';
 
 
-const ListItems = ({items}) => {
+const ListItems = ({items,remove}) => {
     return (
-        items.map((item) => (
-            <View style={styles.listitem}>
-                <Text>{item}</Text>
-            </View>
+        items.map((item,i) => (
+            <Pressable 
+                style={{width:"100%"}}
+                onPress={() => remove(i)} 
+                // onLongPress={() => alert('long pressed list')} 
+                // delayLongPress={2000}
+                // onPressIn={() => alert('press in list')} 
+                // onPressOut={() => alert('press out list')} 
+            >
+                <View 
+                    key={item}
+                    style={styles.listitem}>
+                    <Text>{item}</Text>
+                </View>
+            </Pressable>
+            
         ))
     )
 }
