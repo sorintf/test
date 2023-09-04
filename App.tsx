@@ -1,23 +1,51 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
 
 
 const App = () => {
   return (
-    <View style={{marginTop:50}}>
-      <View style={{backgroundColor:'red',width:'100%'}}>
-        <Text>
+    <View style={styles.mainView}>
+      <View style={styles.basicView}>
+        <Text style={styles.basicText}>
           Hello 1
+        </Text>
+      </View>
+      <View style={styles.basicView}>
+        <Text style={styles.basicText}>
+          Hello 2
         </Text>
       </View>
       <View>
         <Text>
-          Hello 2
+          Hell For Everyone
         </Text>
       </View>
     </View>
   )
 }
+
+const styles =  StyleSheet.create({
+    mainView:{
+      flex:1,
+      paddingTop:50, 
+      backgroundColor:'#00ff00', 
+      alignItems:'center', // center X axis
+      justifyContent:'center', // center Y axis
+    },
+    basicView:{
+      backgroundColor:'#ff00ff', 
+      width:'90%', 
+      marginVertical:'auto',
+      marginBottom:5
+    },
+    basicText:{
+      padding:10,
+      color:'#ffffff', 
+      fontSize:20,
+      fontWeight:'700', 
+      textAlign:'center'
+    }
+})
 
 
 export default App;
