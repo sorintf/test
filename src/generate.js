@@ -2,20 +2,19 @@ import React from "react";
 import { Text, View, StyleSheet } from 'react-native';
 
 
-const Nav = (props) => (
-    <View style={styles.nav}>
-        <Text>My app</Text>
+const Generate = (props) => (
+    <View style={styles.generate}>
+        <Text style={{color:'#ffffff'}}>Add number</Text>
     </View>
 )
 
 const styles =  StyleSheet.create({
-    nav:{
-        color:'#ffffff',
-        backgroundColor:'#ff0000', 
+    generate:{
+        backgroundColor:'#00bcd4', 
         alignItems:'center', // center X axis
         padding:10, 
         width:'100%'
     }
 })
 
-export default Nav;
+export default Generate;

@@ -1,15 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 
 import Nav from './src/nav';
+import Generate from './src/generate';
 
 
 const App = () => {
+  const [hello, setHello] = useState(true);
+
+  useEffect(()=>{
+    setTimeout(()=>{
+      setHello(false)
+    },2000)
+  },[])
+
   return (
     <View style={styles.mainView}>
-      <Nav>
-        Hello there
-      </Nav>
+      <Nav/>
       <View style={styles.basicView}>
         <Text style={styles.basicText}>
           Hello 1
@@ -24,6 +31,13 @@ const App = () => {
         <Text>
           Hell For Everyone
         </Text>
+      </View>
+      { hello ?
+        <Text>Hello everybody</Text>
+        :null
+      }
+      <View>
+        <Generate></Generate>
       </View>
     </View>
   )
