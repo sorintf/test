@@ -1,10 +1,15 @@
 import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 
+import Nav from './src/nav';
+
 
 const App = () => {
   return (
     <View style={styles.mainView}>
+      <Nav>
+        Hello there
+      </Nav>
       <View style={styles.basicView}>
         <Text style={styles.basicText}>
           Hello 1
