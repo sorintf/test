@@ -3,16 +3,24 @@ import { Text, View, StyleSheet } from 'react-native';
 
 import Nav from './src/nav';
 import Generate from './src/generate';
+import ListItems from './src/listitems';
 
 
 const App = () => {
   const [hello, setHello] = useState(true);
+  const [random, setRandom] = useState([20,55]);
 
   useEffect(()=>{
     // setTimeout(()=>{
     //   setHello(false)
     // },2000)
   },[])
+
+  onAddRandom = () => {
+    const randomVal = Math.floor(Math.random() * 100) +1;
+    const newState = [...random,randomVal];
+    setRandom(newState);
+  }
 
   return (
     <View style={styles.mainView}>
@@ -37,8 +45,9 @@ const App = () => {
         :null
       } */}
       <View>
-        <Generate></Generate>
+        <Generate add={() => onAddRandom()}></Generate>
       </View>
+      <ListItems items={random}/>
     </View>
   )
 }
