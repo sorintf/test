@@ -9,14 +9,14 @@ const App = () => {
   const [hello, setHello] = useState(true);
 
   useEffect(()=>{
-    setTimeout(()=>{
-      setHello(false)
-    },2000)
+    // setTimeout(()=>{
+    //   setHello(false)
+    // },2000)
   },[])
 
   return (
     <View style={styles.mainView}>
-      <Nav/>
+      <Nav nameOfApp="Awesome app"/>
       <View style={styles.basicView}>
         <Text style={styles.basicText}>
           Hello 1
@@ -32,10 +32,10 @@ const App = () => {
           Hell For Everyone
         </Text>
       </View>
-      { hello ?
+      {/* { hello ?
         <Text>Hello everybody</Text>
         :null
-      }
+      } */}
       <View>
         <Generate></Generate>
       </View>

@@ -2,9 +2,9 @@ import React from "react";
 import { Text, View, StyleSheet } from 'react-native';
 
 
-const Nav = (props) => (
+const Nav = ({nameOfApp}) => (
     <View style={styles.nav}>
-        <Text>My app</Text>
+        <Text>{nameOfApp}</Text>
     </View>
 )
 
