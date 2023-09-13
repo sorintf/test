@@ -1,10 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View, StyleSheet, ScrollView, ActivityIndicator } from 'react-native';
+import { 
+  Text, 
+  View, 
+  StyleSheet, 
+  ScrollView, 
+  ActivityIndicator, 
+  Image, ImageBackground
+} from 'react-native';
 
 import Nav from './src/nav';
 import Generate from './src/generate';
 import ListItems from './src/listitems';
 import Inputs from './src/inputs';
+
+import Mountains from './src/assets/mountains.jpg';
 
 
 const App = () => {
@@ -42,7 +51,20 @@ const App = () => {
         onScroll={(e) => console.log(e.nativeEvent)}
         style={{width:'100%'}}
       >
-      <View style={styles.basicView}>
+        <ImageBackground 
+          source={Mountains}
+          style={styles.mountains}
+        >
+          <Text>Inside text</Text>
+        </ImageBackground>
+        {/* <Image 
+          // source={Mountains}
+          source={{uri:'https://picsum.photos/400/400'}}
+          style={styles.mountains}
+          resizeMode='contain'
+          onLoadEnd={() => alert('imageloaded')}
+        /> */}
+        {/* <View style={styles.basicView}>
           <Text style={styles.basicText}>
             Hello 1
           </Text>
@@ -58,27 +80,27 @@ const App = () => {
           <Text>
             Hell For Everyone
           </Text>
-        </View>
+        </View> */}
 
         {/* { hello ?
           <Text>Hello everybody</Text>
           :null
         } */}
 
-        <View>
+        {/* <View>
           <Generate add={() => onAddRandom()}></Generate>
         </View>
 
         <ListItems 
           items={random} 
           remove={(pos) => onItemRemove(pos)}
-        />
+        /> */}
 
         {/*<Inputs/>*/}
 
-        <ActivityIndicator animating={false}/>
+        {/* <ActivityIndicator animating={false}/>
         <ActivityIndicator size="large"/>
-        <ActivityIndicator size="small" color="#000fff"/>
+        <ActivityIndicator size="small" color="#000fff"/> */}
       </ScrollView>
     </View>
   )
@@ -103,6 +125,12 @@ const styles =  StyleSheet.create({
       fontSize:20,
       fontWeight:'700', 
       textAlign:'center'
+    },
+    mountains:{
+      width:'100%',
+      height:300,
+      marginTop:20,
+      backgroundColor:'#000'
     }
 })
 
