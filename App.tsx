@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, ScrollView } from 'react-native';
 
 import Nav from './src/nav';
 import Generate from './src/generate';
@@ -35,39 +35,47 @@ const App = () => {
 
       <Nav nameOfApp="Awesome app"/>
 
+      <ScrollView 
+        // onContentSizeChange={(w,h) => alert(h)}
+        // onMomentumScrollBegin={() => alert('start')}
+        // onMomentumScrollEnd={() => alert('end')}
+        onScroll={(e) => console.log(e.nativeEvent)}
+        style={{width:'100%'}}
+      >
       <View style={styles.basicView}>
-        <Text style={styles.basicText}>
-          Hello 1
-        </Text>
-      </View>
+          <Text style={styles.basicText}>
+            Hello 1
+          </Text>
+        </View>
 
-      <View style={styles.basicView}>
-        <Text style={styles.basicText}>
-          Hello 2
-        </Text>
-      </View>
+        <View style={styles.basicView}>
+          <Text style={styles.basicText}>
+            Hello 2
+          </Text>
+        </View>
 
-      <View>
-        <Text>
-          Hell For Everyone
-        </Text>
-      </View>
+        <View>
+          <Text>
+            Hell For Everyone
+          </Text>
+        </View>
 
-      {/* { hello ?
-        <Text>Hello everybody</Text>
-        :null
-      } */}
+        {/* { hello ?
+          <Text>Hello everybody</Text>
+          :null
+        } */}
 
-      <View>
-        <Generate add={() => onAddRandom()}></Generate>
-      </View>
+        <View>
+          <Generate add={() => onAddRandom()}></Generate>
+        </View>
 
-      <ListItems 
-        items={random} 
-        remove={(pos) => onItemRemove(pos)}
-      />
+        <ListItems 
+          items={random} 
+          remove={(pos) => onItemRemove(pos)}
+        />
 
-      <Inputs/>
+        <Inputs/>
+      </ScrollView>
     </View>
   )
 }

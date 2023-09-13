@@ -4,7 +4,7 @@ import { Text, View, StyleSheet, TextInput, Button } from 'react-native';
 
 const Inputs = () => {
     const [myinput,setMyinput] = useState('');
-    const [names,setNames] = useState(['John','James']);
+    const [names,setNames] = useState(['John','James','Ron','Lisa','Mike','George']);
 
     const onChangeInput = (event) => {
         setMyinput(event);
@@ -27,7 +27,7 @@ const Inputs = () => {
                 // keyboardType="number-pad"
                 // placeholder="introdu un numar"
                 // placeholderTextColor={"#ccff00"}
-                // returnKeyType="done"
+                returnKeyType="done"
             />
             <Button
                 title="Add user"
