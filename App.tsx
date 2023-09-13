@@ -4,6 +4,7 @@ import { Text, View, StyleSheet } from 'react-native';
 import Nav from './src/nav';
 import Generate from './src/generate';
 import ListItems from './src/listitems';
+import Inputs from './src/inputs';
 
 
 const App = () => {
@@ -31,33 +32,42 @@ const App = () => {
 
   return (
     <View style={styles.mainView}>
+
       <Nav nameOfApp="Awesome app"/>
+
       <View style={styles.basicView}>
         <Text style={styles.basicText}>
           Hello 1
         </Text>
       </View>
+
       <View style={styles.basicView}>
         <Text style={styles.basicText}>
           Hello 2
         </Text>
       </View>
+
       <View>
         <Text>
           Hell For Everyone
         </Text>
       </View>
+
       {/* { hello ?
         <Text>Hello everybody</Text>
         :null
       } */}
+
       <View>
         <Generate add={() => onAddRandom()}></Generate>
       </View>
+
       <ListItems 
         items={random} 
         remove={(pos) => onItemRemove(pos)}
       />
+
+      <Inputs/>
     </View>
   )
 }
@@ -72,8 +82,7 @@ const styles =  StyleSheet.create({
     },
     basicView:{
       backgroundColor:'#ff00ff', 
-      width:'90%', 
-      marginVertical:'auto',
+      width:'100%', 
       marginBottom:5
     },
     basicText:{
