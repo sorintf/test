@@ -12,6 +12,7 @@ import Nav from './src/nav';
 import Generate from './src/generate';
 import ListItems from './src/listitems';
 import Inputs from './src/inputs';
+import ModalComponent from './src/modal';
 
 import Mountains from './src/assets/mountains.jpg';
 
@@ -51,12 +52,13 @@ const App = () => {
         onScroll={(e) => console.log(e.nativeEvent)}
         style={{width:'100%'}}
       >
-        <ImageBackground 
+        <ModalComponent/>
+        {/* <ImageBackground 
           source={Mountains}
           style={styles.mountains}
         >
           <Text>Inside text</Text>
-        </ImageBackground>
+        </ImageBackground> */}
         {/* <Image 
           // source={Mountains}
           source={{uri:'https://picsum.photos/400/400'}}
